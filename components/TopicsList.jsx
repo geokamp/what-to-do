@@ -2,7 +2,7 @@ import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import {HiPencilAlt} from 'react-icons/hi';
 
-
+export const dynamic = "force-dynamic";
 
 const getTopics = async () => {
     try {
@@ -25,7 +25,6 @@ export default async function TopicsLists(){
 
 
    const {topics} =  await getTopics();
-
 
 
 
