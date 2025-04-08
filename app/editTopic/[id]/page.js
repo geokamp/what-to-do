@@ -4,7 +4,7 @@ import EditTopicForm from "@/components/EditTopicForm/EditTopicForm";
 const getTopicById = async (id) => {
   console.log("Fetching topic with id:", id); 
     try {
-      const res = await fetch(`/api/topics/${id}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/topics/${id}`, {
         cache: "no-store",
       });
   
@@ -23,7 +23,7 @@ const getTopicById = async (id) => {
 }
 
 export default async function EditTopic({ params }) {
-    const { id } = params;
+    const { id } = await params;
     const { topic } = await getTopicById(id);
     console.log(topic);
     

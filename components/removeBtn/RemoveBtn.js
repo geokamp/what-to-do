@@ -1,4 +1,4 @@
-"use client";
+
 import {HiOutlineTrash} from 'react-icons/hi';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
@@ -19,9 +19,9 @@ export default function RemoveBtn({id})  {
                 method:"DELETE",
             });
             if(res.ok){
-                toast.success("Task Deleted!")
-                router.refresh();
-                router.push("/");
+                
+                router.push("/addTopic");
+                toast.success("Task Deleted!");
             }
         }
     };
