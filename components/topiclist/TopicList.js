@@ -36,6 +36,16 @@ export default  function TopicsLists(){
 
         fetchData();
     },[])
+    
+
+    const dateChange = (e)=>{
+      const formattedDate = new Date(e).toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+      });
+      return formattedDate;
+    }
 
     return(
         <>
@@ -44,6 +54,7 @@ export default  function TopicsLists(){
             <div>
                 <h2 className="font-bold text-2xl text-black ">{t.title}</h2>
                 <div className="text-black">{t.description}</div>
+                <p className="text-[12px]">{dateChange(t.createdAt)}</p>
             </div>
 
             <div className="flex gap-2 ">
@@ -53,6 +64,7 @@ export default  function TopicsLists(){
                 </Link>
             </div>
         </div>
+        
         ))}
         </>
     )
